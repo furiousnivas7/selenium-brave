@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<!-- Playwright tests. Run with: mvn test -Dsuite=testng-playwright.xml -->
+<suite name="Playwright Suite">
+    <test name="Playwright on Brave">
+        <classes>
+            <class name="com.example.playwright.WebFormPwTest"/>
+            <class name="com.example.playwright.MercuryToursPwTest"/>
+            <class name="com.example.playwright.EbayPwTest"/>
+        </classes>
+    </test>
+</suite>

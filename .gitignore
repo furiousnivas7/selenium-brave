@@ -4,3 +4,5 @@ screenshots/
 login-debug.png
 .DS_Store
 mercury-flight-form.png
+traces/
+mercury-flight-form-playwright.png
