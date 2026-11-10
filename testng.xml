@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="SeleniumBrave Suite">
+    <test name="Brave browser tests">
+        <classes>
+            <class name="com.example.BraveTest"/>
+            <class name="com.example.MercuryToursTest"/>
+            <class name="com.example.EbayTest"/>
+        </classes>
+    </test>
+</suite>
