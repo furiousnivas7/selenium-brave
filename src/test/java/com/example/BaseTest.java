@@ -4,8 +4,6 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
@@ -27,20 +25,8 @@ public abstract class BaseTest {
 
     @BeforeMethod
     public void setUp() {
-        ChromeOptions options = new ChromeOptions();
-        options.setBinary(BravePath.find());
-
-        boolean headless = Boolean.getBoolean("headless");
-        if (headless) {
-            options.addArguments("--headless=new", "--window-size=1920,1080");
-        }
-
-        driver = new ChromeDriver(options);
+        driver = BraveDriver.create();
         wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-
-        if (!headless) {
-            driver.manage().window().maximize();
-        }
     }
 
     @AfterMethod(alwaysRun = true)

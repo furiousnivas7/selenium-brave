@@ -1,0 +1,43 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<!-- Day 02 lab practicals. Run with: mvn test -Dsuite=testng-day02.xml -->
+<suite name="Day 02 Practicals">
+
+    <test name="Practical 4 - TestNG Basics">
+        <classes><class name="seleniumFour.Example4"/></classes>
+    </test>
+
+    <test name="Practical 5 - Before/After Method/Class">
+        <classes><class name="seleniumFive.Example5"/></classes>
+    </test>
+
+    <test name="Practical 6 - Without Priority">
+        <classes><class name="seleniumSix.Example6"/></classes>
+    </test>
+
+    <test name="Practical 7 - Prioritizing Test Methods">
+        <classes><class name="seleniumSeven.Example7"/></classes>
+    </test>
+
+    <test name="Practical 8 - Skipping a Test Case">
+        <classes><class name="seleniumEight.Example8"/></classes>
+    </test>
+
+    <test name="Practical 9 - Asserts (Selenium)">
+        <classes><class name="seleniumNine.Example9"/></classes>
+    </test>
+
+    <test name="Practical 10 - Asserts">
+        <classes><class name="seleniumTen.Example10"/></classes>
+    </test>
+
+    <test name="Practical 11 - Data Provider">
+        <classes><class name="seleniumEleven.Example11"/></classes>
+    </test>
+
+    <test name="Practical 12 - Parameters">
+        <parameter name="sUsername" value="tutorials"/>
+        <parameter name="sPassword" value="tutorials123"/>
+        <classes><class name="seleniumTwelve.Example12"/></classes>
+    </test>
+
+</suite>
