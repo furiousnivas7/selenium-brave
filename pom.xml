@@ -15,7 +15,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!-- Pick a suite with: mvn test -Dsuite=testng-day02.xml -->
         <suite>testng.xml</suite>
-        <!-- Playwright tests only compile with -Pplaywright -->
+        <!-- Playwright tests are left out of the build with -DskipPlaywright -->
         <playwright.exclude>com/example/playwright/**</playwright.exclude>
     </properties>
 
@@ -36,10 +36,16 @@
     </dependencies>
 
     <profiles>
-        <!-- Playwright is optional (its driver bundle is a ~200MB download).
-             Enable with: mvn test -Pplaywright -Dsuite=testng-playwright.xml -->
+        <!-- Playwright is on by default (VS Code needs it to resolve imports).
+             Its driver bundle is a one-time ~200MB download; on a slow
+             network, leave it out with: mvn test -DskipPlaywright -->
         <profile>
             <id>playwright</id>
+            <activation>
+                <property>
+                    <name>!skipPlaywright</name>
+                </property>
+            </activation>
             <properties>
                 <playwright.exclude>none</playwright.exclude>
             </properties>
